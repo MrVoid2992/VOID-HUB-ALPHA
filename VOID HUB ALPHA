@@ -1,0 +1,164 @@
+local Library loadstring(game: HttpGet("https://raw.githubusercontent.com/xieptc/Kavo-UI-Library/main/source.lua"))() local window Library.CreateLib("Void Hub V1", "Ocean") 
+
+--Player 
+
+local PlayerWindow: NewTab("Player") 
+
+local PlayerSection: NewSection("Player") 
+
+Section 
+
+: PlayerSection:Button ("Fly Gui","HE WAS A FAIRY" ,function() 
+
+Loadstring(game: HttpGet("https://github.com/troycla/fly-gui/blame/a9677c69ecc935648e68df18c2c4cb451547c9d4/Fly-gui"))() 
+
+end) 
+
+: PlayerSection:Button ("RE ", "Resets to all defaults" ,function() 
+
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50 
+
+game.Players.LocalPlayer.Character.Humanoid.Walkspeed = 16 
+
+end) 
+
+: PlayerSection:Button ("UNLOCK RESET","Unlocking Reset In all games" ,function() 
+
+     Enable Reset Character
+     By: Mr.Void
+     game:GetService("StarterGui"):SetCore("ResetButtonCallback", true)
+
+game:GetService("RunService").RenderStepped:Wait() 
+
+end) 
+
+PlayerSection : NewSlider("walkspeed", "SPEEP", 500, 16, function(s) game.Players.LocalPlayer.Character.Humanoid.WalkSpeed 
+
+end) 
+
+PlayerSection : NewSilder("Jumppower", "JUMP HIGH! !", 300, 50, function(s) 
+
+game Players.LocalPlayer.Character.Humanoid.JumpPower 
+
+end) 
+
+PlayerSection.Button: ("Shift Lock","Gives you a shift lock " ,function() 
+
+local l__RunService__1 = game:GetService("RunService");
+local l__ContextActionService__2 = game:GetService("ContextActionService");
+local l__LocalPlayer__3 = game:GetService("Players").LocalPlayer;
+local v4 = l__LocalPlayer__3.Character or l__LocalPlayer__3.CharacterAdded:Wait();
+local l__Parent__5 = script.Parent;
+uis = game:GetService("UserInputService");
+ismobile = uis.TouchEnabled;
+l__Parent__5.Visible = ismobile;
+local u1 = {
+OFF = "rbxasset://textures/ui/mouseLock_off@2x.png", 
+ON = "rbxasset://textures/ui/mouseLock_on@2x.png"
+};
+local l__Humanoid__2 = v4.Humanoid;
+local l__HumanoidRootPart__3 = v4:WaitForChild("HumanoidRootPart");
+local function u4(p1)
+l__Humanoid__2.AutoRotate = p1;
+end;
+local function u5(p2)
+l__Parent__5.Image = u1[p2];
+end;
+local function u6(p3, p4)
+return CFrame.new(l__HumanoidRootPart__3.Position, Vector3.new(p4.CFrame.LookVector.X * 900000, l__HumanoidRootPart__3.Position.Y, p4.CFrame.LookVector.Z * 900000));
+end;
+local l__CurrentCamera__7 = workspace.CurrentCamera;
+local u8 = CFrame.new(1.7, 0, 0);
+local u9 = CFrame.new(-1.7, 0, 0);
+local u10 = false;
+u5("OFF");
+u10 = false;
+local function u11()
+u4(false);
+u5("ON");
+l__HumanoidRootPart__3.CFrame = u6(l__HumanoidRootPart__3, l__CurrentCamera__7);
+l__CurrentCamera__7.CFrame = l__CurrentCamera__7.CFrame * u8;
+end;
+local function u12()
+u4(true);
+u5("OFF");
+l__CurrentCamera__7.CFrame = l__CurrentCamera__7.CFrame * u9;
+pcall(function()
+u10:Disconnect();
+u10 = nil;
+end);
+end;
+function ShiftLock()
+if not u10 then 
+
+else
+u12();
+return;
+end;
+u10 = l__RunService__1.RenderStepped:Connect(function()
+u11();
+end);
+end;
+local v6 = l__ContextActionService__2:BindAction("ShiftLOCK", ShiftLock, false, "On");
+l__ContextActionService__2:SetPosition("ShiftLOCK", UDim2.new(0.8, 0, 0.8, 0));
+l__Parent__5.MouseButton1Click:Connect(function()
+if u10 then
+u12();
+return;
+end;
+u10 = l__RunService__1.RenderStepped:Connect(function()
+u11();
+end);
+end);
+return {}; 
+
+end) 
+
+PlayerSection:Button ("Touch Fling Gui","If you touch others,He got flinged" ,function() 
+
+loadstring(game: HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/Fling%20GUI"))) 
+
+end) 
+
+--Admins 
+
+local AdminsWindow: NewTab("Admins") 
+
+local AdminsSection: NewSection("Admins") 
+
+Section 
+
+AdminsSection.Button: ("Infinite Yield"," Gives Infinite Yield Admin " ,function() 
+
+loadstring(game:HttpGet((https://raw.githubusercontent.com/EdgeIV/infiniteyield/master/source"),true))() 
+
+end) 
+
+AdminsSection.Button: ("Fates Admin"," Gives Fates Admin  " ,function() 
+
+loadstring(game:HttpGet(('https://pastebin.com/raw/pyzjWNhk'),true))() 
+
+end) 
+
+end) 
+
+AdminsSection.Button: ("Tiger Admin"," Gives Tiger Admin  "  ,function() 
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/balintTheDevX/TigerXhubV1/main/TigerXHubV1'))() 
+
+end) 
+
+---OtherHub's 
+
+local Other Hub'sWindow: NewTab("Other Hub's") 
+
+local Other Hub'sSection: NewSection("Other hub's") 
+
+Other Hub'sSection:Button ("Ghost Hub","Other Op Script" ,function() 
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/GhostHub'))() 
+
+end)
+
+
+
